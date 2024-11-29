@@ -1,56 +1,46 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Halaman Sederhana Satu 21</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .container {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            width: 100%;
-            max-width: 400px;
-        }
-        h1 {
-            color: #333;
-        }
-        p {
-            color: #666;
-            font-size: 1rem;
-        }
-        a {
-            display: inline-block;
-            margin-top: 15px;
-            text-decoration: none;
-            color: white;
-            background-color: #007bff;
-            padding: 10px 20px;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-        a:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    <title>Kalkulator BMI</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
     <div class="container">
-        <h1>Selamat Datang!</h1>
-        <p>Ini adalah halaman web sederhana menggunakan HTML dan CSS.</p>
-        <a href="https://example.com" target="_blank">Kunjungi Situs</a>
+        <h1>Kalkulator BMI</h1>
+        <p>Body Mass Index (BMI) digunakan untuk menilai apakah berat badan Anda berada dalam kategori sehat, kekurangan, atau kelebihan.</p>
+
+        <!-- Form Input BMI -->
+        <form id="bmiForm">
+            <label for="gender">Jenis Kelamin:</label>
+            <select id="gender" required>
+                <option value="" disabled selected>Pilih Jenis Kelamin</option>
+                <option value="Laki-Laki">Laki-Laki</option>
+                <option value="Wanita">Wanita</option>
+            </select>
+
+            <label for="weight">Berat Badan (kg):</label>
+            <input type="number" id="weight" placeholder="Masukkan Berat Badan" required>
+
+            <label for="height">Tinggi Badan (cm):</label>
+            <input type="number" id="height" placeholder="Masukkan Tinggi Badan" required>
+
+            <button type="submit">Hitung BMI</button>
+        </form>
+
+        <!-- Display BMI Result -->
+        <div id="bmiResult" class="result hidden">
+            <h2>Hasil BMI Anda</h2>
+            <p id="genderResult"></p>
+            <p id="bmiValue"></p>
+            <p id="bmiCategory"></p> <!-- Menampilkan kategori BMI -->
+        </div>
     </div>
+
+    <script src="js/script.js"></script>
 </body>
+
 </html>
